@@ -24,7 +24,7 @@ public class JavaMySql {
 	private final String userName = "root";
 
 	/** The password for the MySQL account (or empty for anonymous) */
-	private final String password = "Cupcake10!";
+	private final String password = "password";
 
 	/** The name of the computer running MySQL */
 	private final String serverName = "localhost";
