@@ -2,9 +2,9 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- 
+
 db.mysql.url="jdbc:mysql://localhost:3306/db?characterEncoding=UTF-8&useSSL=false"
-*/
+ */
 package javamysql;
 
 import java.sql.Connection;
@@ -15,7 +15,7 @@ import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Properties;
-
+import java.util.Scanner;
 
 /**
  *
@@ -23,11 +23,11 @@ import java.util.Properties;
  */
 public class JavaMySql {
 
-   /** The name of the MySQL account to use (or empty for anonymous) */
-	private final String userName = "root";
+	/** The name of the MySQL account to use (or empty for anonymous) */
+	private final String userName;
 
 	/** The password for the MySQL account (or empty for anonymous) */
-	private final String password = "Cupcake10!";
+	private final String password;
 
 	/** The name of the computer running MySQL */
 	private final String serverName = "localhost";
@@ -37,11 +37,19 @@ public class JavaMySql {
 
 	/** The name of the database we are testing with (this default is installed with MySQL) */
 	private final String dbName = "scratch";
-	
+
 	/** The name of the table we are testing with */
 	private final String tableName = "JDBC_TEST";
-        private final boolean useSSL = false;
-	
+	private final boolean useSSL = false;
+
+	public JavaMySql() {
+		Scanner in = new Scanner(System.in);
+		System.out.println("Username: ");
+		this.userName = in.next();
+		System.out.println("Password: ");
+		this.password = in.next();
+	}
+
 	/**
 	 * Get a new database connection
 	 * 
@@ -69,18 +77,18 @@ public class JavaMySql {
 	 * @throws SQLException If something goes wrong
 	 */
 	public boolean executeUpdate(Connection conn, String command) throws SQLException {
-	    Statement stmt = null;
-	    try {
-	        stmt = conn.createStatement();
-	        stmt.executeUpdate(command); // This will throw a SQLException if it fails
-	        return true;
-	    } finally {
+		Statement stmt = null;
+		try {
+			stmt = conn.createStatement();
+			stmt.executeUpdate(command); // This will throw a SQLException if it fails
+			return true;
+		} finally {
 
-	    	// This will run whether we throw an exception or not
-	        if (stmt != null) { stmt.close(); }
-	    }
+			// This will run whether we throw an exception or not
+			if (stmt != null) { stmt.close(); }
+		}
 	}
-	
+
 	/**
 	 * Connect to MySQL and do some stuff.
 	 */
@@ -99,79 +107,79 @@ public class JavaMySql {
 
 		// Create a table
 		try {
-		    String createString =
-			        "CREATE TABLE " + this.tableName + " ( " +
-			        "ID INTEGER NOT NULL, " +
-			        "NAME varchar(40) NOT NULL, " +
-			        "STREET varchar(40) NOT NULL, " +
-			        "CITY varchar(20) NOT NULL, " +
-			        "STATE char(2) NOT NULL, " +
-			        "ZIP char(5), " +
-			        "PRIMARY KEY (ID))";
+			String createString =
+					"CREATE TABLE " + this.tableName + " ( " +
+							"ID INTEGER NOT NULL, " +
+							"NAME varchar(40) NOT NULL, " +
+							"STREET varchar(40) NOT NULL, " +
+							"CITY varchar(20) NOT NULL, " +
+							"STATE char(2) NOT NULL, " +
+							"ZIP char(5), " +
+							"PRIMARY KEY (ID))";
 			this.executeUpdate(conn, createString);
 			System.out.println("Created a table");
-	    } catch (SQLException e) {
+		} catch (SQLException e) {
 			System.out.println("ERROR: Could not create the table");
 			e.printStackTrace();
 			return;
 		}
-		
+
 		// Drop the table
 		try {
-		    String dropString = "DROP TABLE " + this.tableName;
+			String dropString = "DROP TABLE " + this.tableName;
 			this.executeUpdate(conn, dropString);
 			System.out.println("Dropped the table");
-	    } catch (SQLException e) {
+		} catch (SQLException e) {
 			System.out.println("ERROR: Could not drop the table");
 			e.printStackTrace();
 			return;
 		}
-		
+
 		// Create a table
-//		try {
-//			this.executeUpdate(this.getConnection(), "CREATE TABLE TEST_2 ("
-//					+ "ID INTEGER NOT NULL," + 
-//					"NAME varchar(40) NOT NULL," + 
-//					"STREET varchar(40) NOT NULL," + 
-//					"CITY varchar(20) NOT NULL," + 
-//					"STATE char(2) NOT NULL," + 
-//					"ZIP char(5)," + 
-//					"PRIMARY KEY (ID))");
-//			System.out.println("created TEST_2");
-//		} catch (SQLException e) {
-//			System.out.println("ERROR: Could not create the table");
-//			e.printStackTrace();
-//			return;
-//		}
-	
+		//		try {
+		//			this.executeUpdate(this.getConnection(), "CREATE TABLE TEST_2 ("
+		//					+ "ID INTEGER NOT NULL," + 
+		//					"NAME varchar(40) NOT NULL," + 
+		//					"STREET varchar(40) NOT NULL," + 
+		//					"CITY varchar(20) NOT NULL," + 
+		//					"STATE char(2) NOT NULL," + 
+		//					"ZIP char(5)," + 
+		//					"PRIMARY KEY (ID))");
+		//			System.out.println("created TEST_2");
+		//		} catch (SQLException e) {
+		//			System.out.println("ERROR: Could not create the table");
+		//			e.printStackTrace();
+		//			return;
+		//		}
+
 		try {
 			String selectStatement = "SELECT * FROM TEST_2";
 			PreparedStatement ps = this.getConnection().prepareStatement(selectStatement);
 			ResultSet r = ps.executeQuery();
 			ResultSetMetaData rsmd = r.getMetaData();
 			System.out.println("querying from " + selectStatement);
-			   int columnsNumber = rsmd.getColumnCount();
-			   while (r.next()) {
-			       for (int i = 1; i <= columnsNumber; i++) {
-			           if (i > 1) {
-			        	   System.out.print(",  ");
-			           }
-			           String columnValue = r.getString(i);
-			           System.out.print(columnValue + " " + rsmd.getColumnName(i));
-			       }
-			       System.out.println("");
-			       System.out.println(rsmd.toString());
-			   }
+			int columnsNumber = rsmd.getColumnCount();
+			while (r.next()) {
+				for (int i = 1; i <= columnsNumber; i++) {
+					if (i > 1) {
+						System.out.print(",  ");
+					}
+					String columnValue = r.getString(i);
+					System.out.print(columnValue + " " + rsmd.getColumnName(i));
+				}
+				System.out.println("");
+				System.out.println(rsmd.toString());
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("ERROR: Could not execute query");
 			e.printStackTrace();
 		}
 	}
-  
+
 	/**
 	 * Connect to the DB and do some stuff
-     * @param args
+	 * @param args
 	 */
 	public static void main(String[] args) {
 		JavaMySql app = new JavaMySql();
