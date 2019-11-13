@@ -37,7 +37,7 @@ FOREIGN KEY	(library_id)
 REFERENCES library(library_id)
 ON UPDATE RESTRICT ON DELETE RESTRICT,
 CONSTRAINT staff_registers_mem
-FOREIGN KEY (staff_id) REFERENCES staff(staff_id)
+FOREIGN KEY (staff_id) REFERENCES library_staff(staff_id)
 ON UPDATE RESTRICT ON DELETE RESTRICT
 );
 
@@ -117,16 +117,11 @@ ON DELETE CASCADE ON UPDATE CASCADE
 
 CREATE TABLE member_rents_media 
 (
-member_id INT PRIMARY KEY NOT NULL,
-media_id INT PRIMARY KEY NOT NULL,
+member_id INT NOT NULL,
+media_id INT NOT NULL,
+PRIMARY KEY(member_id, media_id),
 CONSTRAINT fk_member_id FOREIGN KEY (member_id) REFERENCES university_member (member_id)
 ON UPDATE CASCADE ON DELETE CASCADE,
 CONSTRAINT fk_media_id FOREIGN KEY (media_id) REFERENCES media (media_id)
 ON UPDATE RESTRICT ON DELETE RESTRICT
 );
-
-
-
-
-
-
