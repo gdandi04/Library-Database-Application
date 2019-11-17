@@ -147,22 +147,3 @@ BEGIN
     WHERE media_holds.media_id = media_id;
 END //
 DELIMITER ;
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
