@@ -1,9 +1,9 @@
-DROP DATABASE IF EXISTS univeristyLibrarydb;
+DROP DATABASE IF EXISTS universityLibrarydb;
 CREATE DATABASE universityLibrarydb;
 
 USE universityLibrarydb;
 
-CREATE TABLE library
+CREATE TABLE if not exists library
 (
 library_id					INT				PRIMARY KEY		AUTO_INCREMENT,
 location					VARCHAR(30)		NOT NULL,
@@ -31,13 +31,9 @@ member_id		INT				PRIMARY KEY		AUTO_INCREMENT,
 member_name		VARCHAR(30)		NOT NULL,
 address			VARCHAR(100)	NOT NULL,
 library_id		INT				NOT NULL,
-staff_id		INT				NOT NULL,
 CONSTRAINT member_lib_id
 FOREIGN KEY	(library_id)
 REFERENCES library(library_id)
-ON UPDATE RESTRICT ON DELETE RESTRICT,
-CONSTRAINT staff_registers_mem
-FOREIGN KEY (staff_id) REFERENCES staff(staff_id)
 ON UPDATE RESTRICT ON DELETE RESTRICT
 );
 
@@ -72,6 +68,7 @@ availInPrint BOOLEAN NOT NULL,
 plot VARCHAR(300) NOT NULL,
 printPubYear INT NOT NULL,
 ePubYear INT NOT NULL,
+num_copies INT NOT NULL,
 CONSTRAINT fk_ebook_id_media_id FOREIGN KEY (ebook_id) REFERENCES media (media_id)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -117,16 +114,55 @@ ON DELETE CASCADE ON UPDATE CASCADE
 
 CREATE TABLE member_rents_media 
 (
-member_id INT PRIMARY KEY NOT NULL,
-media_id INT PRIMARY KEY NOT NULL,
+member_id INT NOT NULL,
+media_id INT  NOT NULL,
+PRIMARY KEY (member_id, media_id),
 CONSTRAINT fk_member_id FOREIGN KEY (member_id) REFERENCES university_member (member_id)
 ON UPDATE CASCADE ON DELETE CASCADE,
 CONSTRAINT fk_media_id FOREIGN KEY (media_id) REFERENCES media (media_id)
-ON UPDATE RESTRICT ON DELETE RESTRICT
+ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 
+CREATE TABLE media_holds
+(
+member_id	INT NOT NULL,
+media_ida	INT NOT NULL,
+CONSTRAINT holds_fk_member FOREIGN KEY (member_id) REFERENCES university_member(member_id)
+ON UPDATE CASCADE ON DELETE CASCADE,
+CONSTRAINT holds_fk_media FOREIGN KEY (media_id) REFERENCES media(media_id)
+ON UPDATE CASCADE ON DELETE CASCADE
+);
 
+DELIMITER //
 
+DROP PROCEDURE IF EXISTS delete_hold //
 
+CREATE PROCEDURE delete_hold (
+IN media_id INT
+)
+
+BEGIN 
+    DELETE FROM media_holds 
+    WHERE media_holds.media_id = media_id;
+END //
+DELIMITER ;
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
