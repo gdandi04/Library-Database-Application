@@ -12,6 +12,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Properties;
 import java.util.Scanner;
@@ -99,7 +100,6 @@ public class InitializeConnection {
    * Connect to MySQL and do some stuff.
    */
   public void run() {
-
     // Connect to MySQL
     Connection conn = null;
     try {
@@ -116,27 +116,44 @@ public class InitializeConnection {
     Scanner scan = new Scanner(System.in);
     String command = scan.next();
 
-    try {
-      Commands country = Commands.valueOf(command);
-    } catch ( IllegalArgumentException e ) {
-      System.err.println( "No such country" );
-    }
-
     switch (Commands.valueOf(command)) {
       case DELETE:
-        System.out.println(Commands.DELETE.name());
+        DeleteHold dh = new DeleteHold();
+        try {
+          dh.printBooksOnHold();
+
+          Scanner deleteScanner = new Scanner(System.in);
+          System.out.println("Enter the ID of the media item you'd like to delete from your holds list");
+          String item = deleteScanner.next();
+          dh.deleteHoldItem(item);
+
+          dh.printBooksOnHold();
+        } catch (SQLException e) {
+          System.out.println("Unable to execute command.");
+          e.printStackTrace();
+        }
         break;
+
       case HOLD:
         System.out.println(Commands.HOLD.name());
         break;
+
       case CHECKOUT:
         System.out.println(Commands.CHECKOUT.name());
         break;
-      case SEARCH:
-        System.out.println(Commands.SEARCH.name());
-        break;
-    }
 
+      case SEARCH:
+        SearchMedia search = new SearchMedia();
+        try {
+          search.searchResults();
+        } catch (SQLException e) {
+          System.out.println("Unable to execute command.");
+          e.printStackTrace();
+        }
+        break;
+      default:
+        System.out.println("Invalid command");
+    }
   }
 
   int getUserID() {
