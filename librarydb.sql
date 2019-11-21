@@ -6,16 +6,19 @@ USE universityLibrarydb;
 CREATE TABLE if not exists library
 (
 library_id					INT				PRIMARY KEY		AUTO_INCREMENT,
-location					VARCHAR(30)		NOT NULL,
-library_name				VARCHAR(30)		NOT NULL,
-affiliated_university		VARCHAR(30)		NOT NULL
+location					VARCHAR(255)		NOT NULL,
+library_name				VARCHAR(255)		NOT NULL,
+affiliated_university		VARCHAR(255)		NOT NULL
 );
 
 CREATE TABLE library_staff
 (
 staff_id		INT				PRIMARY KEY		AUTO_INCREMENT,
 staff_name		VARCHAR(30)		NOT NULL,
-address			VARCHAR(100),
+street			VARCHAR(100)	NOT NULL,
+city			VARCHAR(100)	NOT NULL,
+state			VARCHAR(3)		NOT NULL,
+zipcode			INT				NOT NULL,
 salary			DECIMAL			NOT NULL,
 library_id		INT				NOT NULL,
 CONSTRAINT staff_lib_id
@@ -28,8 +31,12 @@ ON UPDATE RESTRICT ON DELETE RESTRICT
 CREATE TABLE university_member
 (
 member_id		INT				PRIMARY KEY		AUTO_INCREMENT,
-member_name		VARCHAR(30)		NOT NULL,
-address			VARCHAR(100)	NOT NULL,
+member_last_name		VARCHAR(30)		NOT NULL,
+member_first_name		VARCHAR(30)		NOT NULL,
+street			VARCHAR(100)	NOT NULL,
+city			VARCHAR(100)	NOT NULL,
+state			VARCHAR(3)		NOT NULL,
+zipcode			INT				NOT NULL,
 library_id		INT				NOT NULL,
 CONSTRAINT member_lib_id
 FOREIGN KEY	(library_id)
@@ -39,29 +46,33 @@ ON UPDATE RESTRICT ON DELETE RESTRICT
 
 CREATE TABLE media 
 (
-media_id INT PRIMARY KEY AUTO_INCREMENT
+media_id INT AUTO_INCREMENT,
+media_title VARCHAR(255) NOT NULL,
+PRIMARY KEY (media_id, media_title)
 );
+
 
 CREATE TABLE cd
 (
-cd_id			INT				PRIMARY KEY		AUTO_INCREMENT,
-album_name		VARCHAR(100)	NOT NULL,
+cd_id			INT,
+album_name		VARCHAR(255)	NOT NULL,
 artist			VARCHAR(30)		NOT NULL,
 producer		VARCHAR(30)		NOT NULL,
 num_copies		INT				NOT NULL,
 year_released	DATE,
 song_list		TEXT,
+PRIMARY KEY (cd_id, album_name),
 CONSTRAINT cd_fk_media
-FOREIGN KEY (cd_id)
-REFERENCES media(media_id)
+FOREIGN KEY (cd_id, album_name)
+REFERENCES media(media_id, media_title)
 ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE ebook
 (
-ebook_id INT PRIMARY KEY AUTO_INCREMENT,
-title VARCHAR(100)NOT NULL,
-author VARCHAR(100)NOT NULL,
+ebook_id INT,
+title VARCHAR(255) NOT NULL,
+author VARCHAR(100) NOT NULL,
 pageCount INT NOT NULL,
 category VARCHAR(100)NOT NULL,
 availInPrint BOOLEAN NOT NULL,
@@ -69,13 +80,14 @@ plot VARCHAR(300) NOT NULL,
 printPubYear INT NOT NULL,
 ePubYear INT NOT NULL,
 num_copies INT NOT NULL,
-CONSTRAINT fk_ebook_id_media_id FOREIGN KEY (ebook_id) REFERENCES media (media_id)
-ON DELETE CASCADE ON UPDATE CASCADE
+PRIMARY KEY (ebook_id, title),
+CONSTRAINT fk_ebook_id_media_id FOREIGN KEY (ebook_id, title) REFERENCES media (media_id, media_title)
+	ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE video 
 (
-video_id		INT				PRIMARY KEY		AUTO_INCREMENT,
+video_id		INT				PRIMARY KEY,
 title			VARCHAR(100)	NOT NULL,
 director		VARCHAR(30)		NOT NULL,
 actors			TEXT			NOT NULL,
@@ -83,10 +95,10 @@ genre			VARCHAR(30)		NOT NULL,
 plot			TEXT			NOT NULL,
 runtime			INT				NOT NULL,
 num_copies		INT				NOT NULL,
-year_released	DATE			NOT NULL,
+year_released	INT				NOT NULL,
 CONSTRAINT vid_fk_media
-FOREIGN KEY (video_id)
-REFERENCES media(media_id)
+FOREIGN KEY (video_id, title)
+REFERENCES media(media_id, media_title)
 ON UPDATE CASCADE ON DELETE CASCADE,
 CONSTRAINT vid_genre
 CHECK (genre = 'Comedy'
@@ -94,12 +106,13 @@ OR genre = 'Drama'
 OR genre = 'Horror'
 OR genre = 'Children'
 OR genre = 'Romance'
-OR genre = 'Action')
+OR genre = 'Action'
+OR genre = 'Fantasy')
 );
 
 CREATE TABLE book
 (
-book_id INT PRIMARY KEY AUTO_INCREMENT,
+book_id INT PRIMARY KEY,
 title VARCHAR(100) NOT NULL,
 author VARCHAR(100) NOT NULL,
 pageCount INT NOT NULL,
@@ -108,7 +121,7 @@ category VARCHAR(100) NOT NULL,
 availAsEbook BOOLEAN NOT NULL,
 plot VARCHAR(300) NOT NULL,
 numCopies INT NOT NULL,
-CONSTRAINT fk_book_id_media_id FOREIGN KEY (book_id) REFERENCES media (media_id)
+CONSTRAINT fk_book_id_media_id FOREIGN KEY (book_id, title) REFERENCES media (media_id, media_title)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
 
@@ -127,12 +140,43 @@ ON UPDATE CASCADE ON DELETE CASCADE
 CREATE TABLE media_holds
 (
 member_id	INT NOT NULL,
-media_ida	INT NOT NULL,
+media_id	INT NOT NULL,
 CONSTRAINT holds_fk_member FOREIGN KEY (member_id) REFERENCES university_member(member_id)
 ON UPDATE CASCADE ON DELETE CASCADE,
 CONSTRAINT holds_fk_media FOREIGN KEY (media_id) REFERENCES media(media_id)
 ON UPDATE CASCADE ON DELETE CASCADE
 );
+
+INSERT INTO library (location, library_name, affiliated_university) VALUES 
+("Boston, MA", "Snell Library", "Northeastern University"), 
+("New York, NY", "Bobst Library", "New York University"), 
+("Los Angeles, CA", "Powell Library", "Univesity of California, Los Angeles");
+
+INSERT INTO university_member (member_last_name, member_first_name, street, city, state, zipcode, library_id) VALUES 
+("Durant", "Kathleen", "360 Huntington Avenue", "Boston", "MA", 02115, 1),
+("Bob", "Smith", "49 New York Street", "New York", "NY", 12345, 2),
+("Carol", "Jones", "100 California Drive", "Los Angeles", "CA", 90348, 3),
+("Alice", "Johnson", "330 Huntington Avenue", "Boston", "MA", 20118, 1); 
+
+INSERT INTO media (media_title) VALUES
+("Harry Potter and the Chamber of Secrets"),
+("Harry Potter and the Goblet of Fire"),
+("Harry Potter Soundtrack"),
+("Lord of the Rings: The Hobbit"),
+("Harry Potter and the Chamber of Secrets");
+
+INSERT INTO book (book_id, title, author, pageCount, pubYear, category, availAsEbook, plot, numCopies) VALUES
+(1, "Harry Potter and the Chamber of Secrets", "J.K Rowling", 341, 2002, "Fantasy", true, "A mysterious elf tells Harry to expect trouble 
+during his second year at Hogwarts, but nothing can prepare him for trees that fight back, flying cars, spiders that talk and deadly 
+warnings written in blood on the walls of the school.", 2);
+
+INSERT INTO video (video_id, title, director, actors, genre, plot, runtime, num_copies, year_released) VALUES
+(2, "Harry Potter and the Goblet of Fire", "John White", "Daniel Radcliffe, Emma Watson, Rupert Grint", "Fantasy", "Harry Potter enters the Tri-Wizard tournament.", 157, 1, 2005);
+
+INSERT INTO ebook (ebook_id, title, author, pageCount, category, availInPrint, plot, printPubYear, ePubYear, num_copies) VALUES
+(5, "Harry Potter and the Chamber of Secrets", "J.K Rowling", 341, "Fantasy", true, "A mysterious elf tells Harry to expect trouble 
+during his second year at Hogwarts, but nothing can prepare him for trees that fight back, flying cars, spiders that talk and deadly 
+warnings written in blood on the walls of the school.", 2002, 2009, 2);
 
 DELIMITER //
 
