@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdb8f863-385e-4802-ad09-e52e9deb35b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/test/DeleteHoldTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryDB.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/DeleteHold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/DeleteHold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/libraryDB/SearchMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/SearchMedia.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
