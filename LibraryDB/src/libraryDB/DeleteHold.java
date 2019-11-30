@@ -15,7 +15,7 @@ public class DeleteHold {
   private Connection conn;
 
   public DeleteHold() {
-    this.db = new InitializeConnection(15);
+    this.db = new InitializeConnection(2);
     try {
       this.conn = db.getConnection();
     } catch (SQLException e) {
@@ -79,7 +79,7 @@ public class DeleteHold {
         containsMediaItem = true;
       }
     }
+
     return containsMediaItem;
   }
-
 }
