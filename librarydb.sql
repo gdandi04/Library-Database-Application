@@ -58,13 +58,14 @@ cd_id			INT,
 album_name		VARCHAR(255)	NOT NULL,
 artist			VARCHAR(30)		NOT NULL,
 producer		VARCHAR(30)		NOT NULL,
+genre VARCHAR(30)		NOT NULL,
 num_copies		INT				NOT NULL,
 year_released	DATE,
 song_list		TEXT,
 PRIMARY KEY (cd_id, album_name),
 CONSTRAINT cd_fk_media
 FOREIGN KEY (cd_id, album_name)
-REFERENCES media(media_id, media_title)
+ REFERENCES media(media_id, media_title)
 ON UPDATE CASCADE ON DELETE CASCADE
 );
 
@@ -74,15 +75,15 @@ ebook_id INT,
 title VARCHAR(255) NOT NULL,
 author VARCHAR(100) NOT NULL,
 pageCount INT NOT NULL,
-category VARCHAR(100)NOT NULL,
+genre VARCHAR(100)NOT NULL,
+num_copies INT NOT NULL,
 availInPrint BOOLEAN NOT NULL,
 plot VARCHAR(300) NOT NULL,
 printPubYear INT NOT NULL,
 ePubYear INT NOT NULL,
-num_copies INT NOT NULL,
 PRIMARY KEY (ebook_id, title),
-CONSTRAINT fk_ebook_id_media_id FOREIGN KEY (ebook_id, title) REFERENCES media (media_id, media_title)
-	ON DELETE CASCADE ON UPDATE CASCADE
+ CONSTRAINT fk_ebook_id_media_id FOREIGN KEY (ebook_id, title) REFERENCES media (media_id, media_title)
+ 	ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE video 
@@ -92,10 +93,10 @@ title			VARCHAR(100)	NOT NULL,
 director		VARCHAR(30)		NOT NULL,
 actors			TEXT			NOT NULL,
 genre			VARCHAR(30)		NOT NULL,
+num_copies		INT				NOT NULL,
 plot			TEXT			NOT NULL,
 runtime			INT				NOT NULL,
-num_copies		INT				NOT NULL,
-year_released	INT				NOT NULL,
+year_released	INT			NOT NULL,
 CONSTRAINT vid_fk_media
 FOREIGN KEY (video_id, title)
 REFERENCES media(media_id, media_title)
@@ -116,11 +117,11 @@ book_id INT PRIMARY KEY,
 title VARCHAR(100) NOT NULL,
 author VARCHAR(100) NOT NULL,
 pageCount INT NOT NULL,
+genre VARCHAR(100) NOT NULL,
+numCopies INT NOT NULL,
 pubYear INT NOT NULL,
-category VARCHAR(100) NOT NULL,
 availAsEbook BOOLEAN NOT NULL,
 plot VARCHAR(300) NOT NULL,
-numCopies INT NOT NULL,
 CONSTRAINT fk_book_id_media_id FOREIGN KEY (book_id, title) REFERENCES media (media_id, media_title)
 ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -148,35 +149,38 @@ ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 INSERT INTO library (location, library_name, affiliated_university) VALUES 
-("Boston, MA", "Snell Library", "Northeastern University"), 
-("New York, NY", "Bobst Library", "New York University"), 
-("Los Angeles, CA", "Powell Library", "Univesity of California, Los Angeles");
+ ("Boston, MA", "Snell Library", "Northeastern University"), 
+ ("New York, NY", "Bobst Library", "New York University"), 
+ ("Los Angeles, CA", "Powell Library", "Univesity of California, Los Angeles");
 
-INSERT INTO university_member (member_last_name, member_first_name, street, city, state, zipcode, library_id) VALUES 
-("Durant", "Kathleen", "360 Huntington Avenue", "Boston", "MA", 02115, 1),
-("Bob", "Smith", "49 New York Street", "New York", "NY", 12345, 2),
-("Carol", "Jones", "100 California Drive", "Los Angeles", "CA", 90348, 3),
-("Alice", "Johnson", "330 Huntington Avenue", "Boston", "MA", 20118, 1); 
+ INSERT INTO university_member (member_last_name, member_first_name, street, city, state, zipcode, library_id) VALUES 
+ ("Durant", "Kathleen", "360 Huntington Avenue", "Boston", "MA", 02115, 1),
+ ("Bob", "Smith", "49 New York Street", "New York", "NY", 12345, 2),
+ ("Carol", "Jones", "100 California Drive", "Los Angeles", "CA", 90348, 3),
+ ("Alice", "Johnson", "330 Huntington Avenue", "Boston", "MA", 20118, 1); 
 
-INSERT INTO media (media_title) VALUES
-("Harry Potter and the Chamber of Secrets"),
-("Harry Potter and the Goblet of Fire"),
-("Harry Potter Soundtrack"),
-("Lord of the Rings: The Hobbit"),
-("Harry Potter and the Chamber of Secrets");
+ INSERT INTO media (media_title) VALUES
+ ("Harry Potter and the Chamber of Secrets"),
+ ("Harry Potter and the Goblet of Fire"),
+ ("Harry Potter Soundtrack"),
+ ("Lord of the Rings: The Hobbit"),
+ ("Harry Potter and the Chamber of Secrets");
 
-INSERT INTO book (book_id, title, author, pageCount, pubYear, category, availAsEbook, plot, numCopies) VALUES
-(1, "Harry Potter and the Chamber of Secrets", "J.K Rowling", 341, 2002, "Fantasy", true, "A mysterious elf tells Harry to expect trouble 
-during his second year at Hogwarts, but nothing can prepare him for trees that fight back, flying cars, spiders that talk and deadly 
-warnings written in blood on the walls of the school.", 2);
+ INSERT INTO book (book_id, title, author, pageCount, numCopies, genre, pubYear, availAsEbook, plot) VALUES
+ (1, "Harry Potter and the Chamber of Secrets", "J.K Rowling", 341, 2, "Fantasy", 2002, true, "A mysterious elf tells Harry to expect trouble 
+ during his second year at Hogwarts, but nothing can prepare him for trees that fight back, flying cars, spiders that talk and deadly 
+ warnings written in blood on the walls of the school.");
 
-INSERT INTO video (video_id, title, director, actors, genre, plot, runtime, num_copies, year_released) VALUES
-(2, "Harry Potter and the Goblet of Fire", "John White", "Daniel Radcliffe, Emma Watson, Rupert Grint", "Fantasy", "Harry Potter enters the Tri-Wizard tournament.", 157, 1, 2005);
+ INSERT INTO video (video_id, title, director, actors, num_copies, genre, plot, runtime, year_released) VALUES
+ (2, "Harry Potter and the Goblet of Fire", "John White", "Daniel Radcliffe, Emma Watson, Rupert Grint", 1, "Fantasy", "Harry Potter enters the Tri-Wizard tournament.", 157, 2005);
 
-INSERT INTO ebook (ebook_id, title, author, pageCount, category, availInPrint, plot, printPubYear, ePubYear, num_copies) VALUES
-(5, "Harry Potter and the Chamber of Secrets", "J.K Rowling", 341, "Fantasy", true, "A mysterious elf tells Harry to expect trouble 
-during his second year at Hogwarts, but nothing can prepare him for trees that fight back, flying cars, spiders that talk and deadly 
-warnings written in blood on the walls of the school.", 2002, 2009, 2);
+ INSERT INTO ebook (ebook_id, title, author, pageCount, num_copies,  genre, availInPrint, plot, printPubYear, ePubYear) VALUES
+ (5, "Harry Potter and the Chamber of Secrets", "J.K Rowling", 341, 2, "Fantasy", true, "A mysterious elf tells Harry to expect trouble 
+ during his second year at Hogwarts, but nothing can prepare him for trees that fight back, flying cars, spiders that talk and deadly 
+ warnings written in blood on the walls of the school.", 2002, 2009);
+
+INSERT INTO media_holds(media_id, member_id) VALUES 
+(1, 1), (2,1), (5,1);
 
 DELIMITER //
 
@@ -189,5 +193,20 @@ IN media_id INT
 BEGIN 
     DELETE FROM media_holds 
     WHERE media_holds.media_id = media_id;
+END //
+DELIMITER ;
+    
+DELIMITER //
+
+DROP PROCEDURE IF EXISTS place_hold //
+
+CREATE PROCEDURE place_hold (
+IN media_id INT
+)
+
+BEGIN 
+    INSERT INTO media_holds VALUES
+    (mediaID, memberID);
+
 END //
 DELIMITER ;
