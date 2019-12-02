@@ -1,6 +1,8 @@
 package libraryDB;
 
+import com.mysql.cj.x.protobuf.MysqlxPrepare.Prepare;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -33,10 +35,15 @@ public class SearchMedia {
         System.out.println("Exited search command, back to homepage");
       } else {
         if (this.searchHelp(next)) {
-          Statement search = conn.createStatement();
-          ResultSet searchResult =
-              search.executeQuery("SELECT * FROM media WHERE media_name LIKE '%"
-                  + next + "%'");
+          String sql ="Select name from tablename where like %";
+          PreparedStatement statement = conn.prepareStatement(sql);
+          statement.setString(1, next + "%");
+
+//          Statement search = conn.createStatement();
+//          ResultSet searchResult =
+//              search.executeQuery("SELECT * FROM media WHERE media_name LIKE '%"
+//                  + next + "%'");
+          ResultSet searchResult = statement.executeQuery();
           while (searchResult.next()) {
             ArrayList<String> row = new ArrayList<String>();
             row.add("Media ID: " + searchResult.getNString("media_id"));
