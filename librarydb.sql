@@ -7,8 +7,8 @@ CREATE TABLE if not exists library
 (
 library_id					INT				PRIMARY KEY		AUTO_INCREMENT,
 location					VARCHAR(255)		NOT NULL,
- library_name				VARCHAR(255)		NOT NULL,
- affiliated_university		VARCHAR(255)		NOT NULL
+library_name				VARCHAR(255)		NOT NULL,
+affiliated_university		VARCHAR(255)		NOT NULL
 );
 
 CREATE TABLE library_staff
@@ -16,9 +16,9 @@ CREATE TABLE library_staff
 staff_id		INT				PRIMARY KEY		AUTO_INCREMENT,
 staff_name		VARCHAR(30)		NOT NULL,
 street			VARCHAR(100)	NOT NULL,
- city			VARCHAR(100)	NOT NULL,
- state			VARCHAR(3)		NOT NULL,
- zipcode			INT				NOT NULL,
+city			VARCHAR(100)	NOT NULL,
+state			VARCHAR(3)		NOT NULL,
+zipcode			INT				NOT NULL,
 salary			DECIMAL			NOT NULL,
 library_id		INT				NOT NULL,
 CONSTRAINT staff_lib_id
@@ -32,11 +32,11 @@ CREATE TABLE university_member
 (
 member_id		INT				PRIMARY KEY		AUTO_INCREMENT,
 member_last_name		VARCHAR(30)		NOT NULL,
- member_first_name		VARCHAR(30)		NOT NULL,
- street			VARCHAR(100)	NOT NULL,
- city			VARCHAR(100)	NOT NULL,
- state			VARCHAR(3)		NOT NULL,
- zipcode			INT				NOT NULL,
+member_first_name		VARCHAR(30)		NOT NULL,
+street			VARCHAR(100)	NOT NULL,
+city			VARCHAR(100)	NOT NULL,
+state			VARCHAR(3)		NOT NULL,
+zipcode			INT				NOT NULL,
 library_id		INT				NOT NULL,
 CONSTRAINT member_lib_id
 FOREIGN KEY	(library_id)
@@ -47,14 +47,15 @@ ON UPDATE RESTRICT ON DELETE RESTRICT
 CREATE TABLE media 
 (
 media_id INT AUTO_INCREMENT,
- media_title VARCHAR(255) NOT NULL,
- PRIMARY KEY (media_id, media_title)
+media_title VARCHAR(255) NOT NULL,
+PRIMARY KEY (media_id, media_title)
 );
+
 
 CREATE TABLE cd
 (
 cd_id			INT,
-album_name		VARCHAR(225)	NOT NULL,
+album_name		VARCHAR(255)	NOT NULL,
 artist			VARCHAR(30)		NOT NULL,
 producer		VARCHAR(30)		NOT NULL,
 genre VARCHAR(30)		NOT NULL,
@@ -70,9 +71,9 @@ ON UPDATE CASCADE ON DELETE CASCADE
 
 CREATE TABLE ebook
 (
-ebook_id INT ,
-title VARCHAR(255)NOT NULL,
-author VARCHAR(100)NOT NULL,
+ebook_id INT,
+title VARCHAR(255) NOT NULL,
+author VARCHAR(100) NOT NULL,
 pageCount INT NOT NULL,
 genre VARCHAR(100)NOT NULL,
 num_copies INT NOT NULL,
@@ -193,7 +194,10 @@ BEGIN
     DELETE FROM media_holds 
     WHERE media_holds.media_id = media_id;
 END //
+<<<<<<< HEAD
 
+=======
+>>>>>>> e43ca9ea7988b2a96527eca2c99f03b3d63f2160
 DELIMITER ;
     
 DELIMITER //
@@ -210,6 +214,7 @@ BEGIN
 
 END //
 DELIMITER ;
+<<<<<<< HEAD
     
     
     
@@ -225,3 +230,5 @@ DELIMITER ;
     
     
 
+=======
+>>>>>>> e43ca9ea7988b2a96527eca2c99f03b3d63f2160
