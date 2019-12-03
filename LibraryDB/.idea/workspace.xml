@@ -3,6 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="bdb8f863-385e-4802-ad09-e52e9deb35b8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/DeleteHold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/DeleteHold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection$Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection$Commands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/SearchMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/SearchMedia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/test/LibraryDB/DeleteHoldTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libraryDB/DeleteHold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/DeleteHold.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libraryDB/InitializeConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/InitializeConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libraryDB/SearchMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/SearchMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/DeleteHoldTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../librarydb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../librarydb.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

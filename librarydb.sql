@@ -210,3 +210,60 @@ BEGIN
 
 END //
 DELIMITER ;
+
+DELIMITER //
+DROP PROCEDURE IF EXISTS search_book //
+
+CREATE PROCEDURE search_book (
+	IN search_query VARCHAR(255)
+)
+
+BEGIN
+	SELECT * FROM book WHERE title LIKE CONCAT("%", search_query, "%")
+    OR author LIKE CONCAT("%" + search_query + "%")
+    OR plot LIKE CONCAT("%" + search_query + "%");
+END //
+DELIMITER ;
+
+DELIMITER //
+DROP PROCEDURE IF EXISTS search_ebook //
+
+CREATE PROCEDURE search_ebook (
+	IN search_query VARCHAR(255)
+)
+
+BEGIN
+	SELECT * FROM ebook WHERE title LIKE CONCAT("%", search_query, "%")
+    OR author LIKE CONCAT("%" + search_query + "%")
+    OR plot LIKE CONCAT("%" + search_query + "%");
+END //
+DELIMITER ;
+
+DELIMITER //
+DROP PROCEDURE IF EXISTS search_video //
+
+CREATE PROCEDURE search_video (
+	IN search_query VARCHAR(255)
+)
+
+BEGIN
+	SELECT * FROM video WHERE title LIKE CONCAT("%", search_query, "%")
+    OR director LIKE CONCAT("%" + search_query + "%")
+    OR actors LIKE CONCAT("%" + search_query + "%")
+    OR plot LIKE CONCAT("%" + search_query + "%");
+END //
+DELIMITER ;
+
+DELIMITER //
+DROP PROCEDURE IF EXISTS search_cd //
+
+CREATE PROCEDURE search_cd (
+	IN search_query VARCHAR(255)
+)
+
+BEGIN
+	SELECT * FROM video WHERE album_name LIKE CONCAT("%", search_query, "%")
+    OR artist LIKE CONCAT("%" + search_query + "%")
+    OR song_list LIKE CONCAT("%" + search_query + "%");
+END //
+DELIMITER ;

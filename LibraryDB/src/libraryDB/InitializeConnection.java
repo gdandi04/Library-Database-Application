@@ -41,7 +41,7 @@ public class InitializeConnection {
   private final int userID;
 
   public enum Commands {
-    DELETE, HOLD, CHECKOUT, SEARCH;
+    DELETE, HOLD, CHECKOUT, SEARCH, EXIT;
   }
 
   /** The name of the table we are testing with */
@@ -54,7 +54,8 @@ public class InitializeConnection {
     this.userName = in.next();
     System.out.println("Password: ");
     this.password = in.next();
-    this.userID = userID;
+    System.out.println("User id: ");
+    this.userID = Integer.parseInt(in.next());
   }
 
   /**
@@ -113,26 +114,25 @@ public class InitializeConnection {
 
     this.possibleCommands();
 
-    Scanner scan = new Scanner(System.in);
-    String command = scan.next();
+    Scanner commandType = new Scanner(System.in);
+    String command = commandType.next();
 
     switch (Commands.valueOf(command)) {
       case DELETE:
-        DeleteHold dh = new DeleteHold();
+        DeleteHold dh = new DeleteHold(this);
         try {
-          dh.printBooksOnHold();
 
           Scanner deleteScanner = new Scanner(System.in);
-          System.out.println("Enter the ID of the media item you'd like to delete from your holds list");
+          System.out.println("Enter the ID of the media item you'd like to delete from your holds list or type cancel to return to home.");
+          System.out.println(dh.printBooksOnHold());
           String item = deleteScanner.next();
           dh.deleteHoldItem(item);
+          System.out.println(dh.printBooksOnHold());
 
-          dh.printBooksOnHold();
         } catch (SQLException e) {
           System.out.println("Unable to execute command.");
           e.printStackTrace();
         }
-        break;
 
       case HOLD:
         System.out.println(Commands.HOLD.name());
@@ -143,13 +143,52 @@ public class InitializeConnection {
         break;
 
       case SEARCH:
-        SearchMedia search = new SearchMedia();
+        SearchMedia searchMedia = new SearchMedia(this);
         try {
-          search.searchResults();
+            String mediaType = this.userChoice();
+          if (mediaType.equals("exit")) {
+            this.run();
+          }
+            String mediaQuery = this.searchQuery();
+//          while (!mediaType.equals("exit")) {
+            switch (mediaType) {
+              case "1":
+                System.out.println("Searching Books");
+                searchMedia.searchBook(mediaQuery);
+                mediaType = this.userChoice();
+                mediaQuery = this.searchQuery();
+                break;
+              case "2":
+                System.out.println("Searching E-Books");
+                searchMedia.searchEBook(mediaQuery);
+                mediaType = this.userChoice();
+                mediaQuery = this.searchQuery();
+                break;
+              case "3":
+                System.out.println("Searching Videos");
+                searchMedia.searchVideo(mediaQuery);
+                mediaType = this.userChoice();
+                mediaQuery = this.searchQuery();
+                break;
+              case "4":
+                System.out.println("Searching CDs");
+                searchMedia.searchCD(mediaQuery);
+                mediaType = this.userChoice();
+                mediaQuery = this.searchQuery();
+                break;
+              case "exit":
+                this.run();
+                break;
+              default:
+                System.out.println("The library doesn't carry this media type");
+            }
         } catch (SQLException e) {
           System.out.println("Unable to execute command.");
           e.printStackTrace();
         }
+        break;
+      case EXIT:
+        System.out.println("Ended session");
         break;
       default:
         System.out.println("Invalid command");
@@ -163,6 +202,26 @@ public class InitializeConnection {
   private void possibleCommands() {
     System.out.println("Please enter one of the following possible commands: ");
     System.out.println(Arrays.asList(Commands.values()));
+  }
+
+  private void displayMediaTypes() {
+      System.out.println("Choose the type of media you would like to search for by typing the corresponding number.");
+      System.out.println("1: Book\n"
+          + "2: E-Book\n"
+          + "3: Video\n"
+          + "4: CD");
+  }
+
+  private String userChoice() {
+    Scanner choice = new Scanner(System.in);
+    this.displayMediaTypes();
+    return choice.next();
+  }
+
+  private String searchQuery() {
+    Scanner media = new Scanner(System.in);
+    System.out.println("Enter your search query:");
+    return media.next();
   }
 
 }
