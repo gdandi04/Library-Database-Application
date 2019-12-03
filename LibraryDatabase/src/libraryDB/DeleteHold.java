@@ -23,6 +23,20 @@ public class DeleteHold {
     }
   }
 
+  public void deleteItem() throws SQLException {
+    System.out.println("Enter the ID of the media item you'd like to delete from your "
+          + "holds list or type \"EXIT\" to return to home.");
+    Scanner deleteScanner = new Scanner(System.in);
+    System.out.println(this.printBooksOnHold());
+    String decision = deleteScanner.next();
+    if (decision.equals("EXIT")) {
+      db.runCommand(conn);
+    } else {
+      this.deleteHoldItem(decision);
+      this.deleteItem();
+    }
+  }
+
   public ArrayList<ArrayList<String>> printBooksOnHold() throws SQLException {
     Statement mediaHolds = conn.createStatement();
     ResultSet rsMediaHolds =
@@ -30,7 +44,8 @@ public class DeleteHold {
 
     Statement mediaName = conn.createStatement();
     ResultSet rsMediaName =
-          mediaName.executeQuery("SELECT media_title FROM media JOIN media_holds WHERE media.media_id = media_holds.media_id AND member_id =" + db.getUserID());
+          mediaName.executeQuery("SELECT media_title FROM media JOIN media_holds WHERE "
+                + "media.media_id = media_holds.media_id AND member_id =" + db.getUserID());
 
     ArrayList<ArrayList<String>> media = new ArrayList<>();
 
@@ -41,38 +56,45 @@ public class DeleteHold {
       row.add("Media ID: " + rsMediaHolds.getString("media_id"));
       row.add("Media Name: " + rsMediaName.getString("media_title"));
       media.add(row);
-//      System.out.println(row);
     }
 
     if (media.size() == 0) {
-      System.out.println("You have no holds in your account.");
-      this.db.run();
-    }
+      System.out.println("You have no holds in your account.\n");
+      this.db.runCommand(this.conn);
 
+    }
     return media;
   }
 
   public void deleteHoldItem(String item) throws SQLException {
-    if (item.equals("cancel")) {
-      this.db.run();
+    if (item.equals("EXIT")) {
+      this.db.runCommand(conn);
+
     }
-    int itemID = Integer.parseInt(item);
-    if (containsHoldItem(itemID)) {
-      CallableStatement delete = db.getConnection().prepareCall("{CALL delete_hold(?)}");
+    else if (containsHoldItem(Integer.parseInt(item))) {
+      int itemID = Integer.parseInt(item);
+      CallableStatement delete = db.getConnection().prepareCall("{CALL delete_hold(?, ?)}");
       delete.setInt("media_id", itemID);
+      delete.setInt("member_id", db.getUserID());
       delete.execute();
     } else {
-      Scanner scanner = new Scanner(System.in);
-      System.out.println("No such media item found in your holds. Try again or type \"exit\" to return to all commands.");
-      String input = scanner.next();
-      if (input.equals("exit")) {
-        System.out.println("end this command");
-      } else {
-        try {
-          deleteHoldItem(input);
-        } catch (SQLException e) {
-          e.printStackTrace();
-        }
+      this.emptyHolds();
+    }
+  }
+
+  private void emptyHolds() throws SQLException {
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("No such media item found in your holds. "
+          + "Try again or type \"EXIT\" to return to all commands.");
+    String input = scanner.next();
+    if (input.equals("EXIT")) {
+      this.db.runCommand(this.conn);
+
+    } else {
+      try {
+        deleteHoldItem(input);
+      } catch (SQLException e) {
+        e.printStackTrace();
       }
     }
   }

@@ -7,7 +7,7 @@ public class RunApplication {
    * @param args
    */
   public static void main(String[] args) {
-    InitializeConnection app = new InitializeConnection(10);
+    InitializeConnection app = new InitializeConnection();
     app.run();
   }
 
