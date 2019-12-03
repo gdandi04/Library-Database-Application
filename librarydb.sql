@@ -180,7 +180,7 @@ INSERT INTO library (location, library_name, affiliated_university) VALUES
  warnings written in blood on the walls of the school.", 2002, 2009);
 
 INSERT INTO media_holds(media_id, member_id) VALUES 
-(1, 1), (2,1), (5,1);
+(1, 1), (2,1), (5,1), (1, 2), (5, 2);
 
 DELIMITER //
 
@@ -194,41 +194,19 @@ BEGIN
     DELETE FROM media_holds 
     WHERE media_holds.media_id = media_id;
 END //
-<<<<<<< HEAD
 
-=======
->>>>>>> e43ca9ea7988b2a96527eca2c99f03b3d63f2160
 DELIMITER ;
     
 DELIMITER //
 
-DROP PROCEDURE IF EXISTS place_hold //
-
 CREATE PROCEDURE place_hold (
-IN media_id INT
+IN mediaID INT, memberID INT
 )
 
 BEGIN 
     INSERT INTO media_holds VALUES
-    (mediaID, memberID);
+    (memberID, mediaID);
+    
 
 END //
 DELIMITER ;
-<<<<<<< HEAD
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-=======
->>>>>>> e43ca9ea7988b2a96527eca2c99f03b3d63f2160
