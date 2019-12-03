@@ -8,6 +8,10 @@ db.mysql.url="jdbc:mysql://localhost:3306/db?characterEncoding=UTF-8&useSSL=fals
 
 package libraryDB;
 
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -41,20 +45,21 @@ public class InitializeConnection {
   private final int userID;
 
   public enum Commands {
-    DELETE, HOLD, CHECKOUT, SEARCH;
+    DELETE, HOLD, CHECKOUT, SEARCH, SIGNOUT;
   }
 
   /** The name of the table we are testing with */
 //	private final String tableName = "JDBC_TEST";
   private final boolean useSSL = false;
 
-  public InitializeConnection(int userID) {
+  public InitializeConnection() {
     Scanner in = new Scanner(System.in);
     System.out.println("Username: ");
     this.userName = in.next();
     System.out.println("Password: ");
     this.password = in.next();
-    this.userID = userID;
+    System.out.println("User id: ");
+    this.userID = Integer.parseInt(in.next());
   }
 
   /**
@@ -76,6 +81,7 @@ public class InitializeConnection {
 
     return conn;
   }
+
 
   /**
    * Run a SQL command which does not return a recordset:
@@ -104,57 +110,88 @@ public class InitializeConnection {
     Connection conn = null;
     try {
       conn = this.getConnection();
-      System.out.println("Connected to database");
+      System.out.println("Connected to database\n\n\n");
+      this.runCommand(conn);
     } catch (SQLException e) {
       System.out.println("ERROR: Could not connect to the database");
       e.printStackTrace();
       return;
     }
-
-    this.possibleCommands();
-
-    Scanner scan = new Scanner(System.in);
-    String command = scan.next();
-
-    switch (Commands.valueOf(command)) {
-      case DELETE:
-        DeleteHold dh = new DeleteHold();
-        try {
-          dh.printBooksOnHold();
-
-          Scanner deleteScanner = new Scanner(System.in);
-          System.out.println("Enter the ID of the media item you'd like to delete from your holds list");
-          String item = deleteScanner.next();
-          dh.deleteHoldItem(item);
-
-          dh.printBooksOnHold();
-        } catch (SQLException e) {
-          System.out.println("Unable to execute command.");
-          e.printStackTrace();
-        }
-        break;
-
-      case HOLD:
-        System.out.println(Commands.HOLD.name());
-        break;
-
-      case CHECKOUT:
-        System.out.println(Commands.CHECKOUT.name());
-        break;
-
-      case SEARCH:
-        SearchMedia search = new SearchMedia();
-        try {
-          search.searchResults();
-        } catch (SQLException e) {
-          System.out.println("Unable to execute command.");
-          e.printStackTrace();
-        }
-        break;
-      default:
-        System.out.println("Invalid command");
-    }
   }
+
+    public void runCommand (Connection conn) {
+      this.possibleCommands();
+
+      Scanner scan = new Scanner(System.in);
+      String command = scan.next();
+
+      switch (command) {
+        case "DELETE":
+          try {
+            this.deleteItem(conn);
+          } catch (SQLException e) {
+            System.out.println("Unable to execute command.");
+            e.printStackTrace();
+          }
+          break;
+
+        case "HOLD":
+          try {
+            PlaceHold ph = new PlaceHold(this, conn);
+            ph.placeItemOnHold();
+          } catch (SQLException e) {
+            System.out.println("Unable to execute command");
+            e.printStackTrace();
+          }
+          break;
+
+        case "CHECKOUT":
+          System.out.println(Commands.CHECKOUT.name());
+          break;
+
+        case "SEARCH":
+          SearchMedia search = new SearchMedia(this);
+          try {
+            search.searchResults();
+          } catch (SQLException e) {
+            System.out.println("Unable to execute command.");
+            e.printStackTrace();
+          }
+          break;
+
+        case "SIGNOUT":
+          System.out.println("Would you like to sign out?\n\'Yes\' or \'No\'");
+          String s = scan.next();
+            if (s.equals("Yes")) {
+              System.out.println("Goodbye");
+              scan.close();
+              break;
+            } else if (s.equals("No")) {
+              this.runCommand(conn);
+            }
+            break;
+        default:
+          System.out.println("Invalid command\n");
+          this.runCommand(conn);
+      }
+      scan.close();
+    }
+
+    private void deleteItem(Connection conn) throws SQLException {
+      DeleteHold dh = new DeleteHold(this);
+      System.out.println("Enter the ID of the media item you'd like to delete from your "
+            + "holds list or type \"EXIT\" to return to home.");
+      Scanner deleteScanner = new Scanner(System.in);
+      System.out.println(dh.printBooksOnHold());
+      if (deleteScanner.next().equals("EXIT")) {
+       // deleteScanner.close();
+        this.runCommand(conn);
+      } else {
+        String item = deleteScanner.next();
+        dh.deleteHoldItem(item);
+        this.deleteItem(conn);
+      }
+    }
 
   int getUserID() {
     return this.userID;
