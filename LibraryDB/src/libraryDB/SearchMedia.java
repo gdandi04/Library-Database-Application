@@ -1,5 +1,6 @@
 package libraryDB;
 
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -131,6 +132,11 @@ public class SearchMedia {
         System.out.println(s);
       }
     }
+  }
+
+  private boolean searchHelp(String oneWord) throws SQLException {
+    Statement search = conn.createStatement();
+    return search.execute("SELECT * FROM media WHERE media_name LIKE %" + oneWord + "%");
   }
 
 }

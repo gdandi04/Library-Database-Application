@@ -86,7 +86,7 @@ public class DeleteHold {
         containsMediaItem = true;
       }
     }
+
     return containsMediaItem;
   }
-
 }

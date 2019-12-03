@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdb8f863-385e-4802-ad09-e52e9deb35b8" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/libraryDB/PlaceHold.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/DeleteHold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/DeleteHold.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection$Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection$Commands.class" afterDir="false" />
@@ -14,6 +16,15 @@
       <change beforePath="$PROJECT_DIR$/src/libraryDB/SearchMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/SearchMedia.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/DeleteHoldTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../librarydb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../librarydb.sql" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/LibraryDB.iml" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryDB.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/DeleteHold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/DeleteHold.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/InitializeConnection.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/SearchMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDB/libraryDB/SearchMedia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libraryDB/InitializeConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/InitializeConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libraryDB/SearchMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/SearchMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+>>>>>>> 17a2891e3158adc27204ea9e7b3e0b9b795c67fa
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,13 +35,20 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="$PROJECT_DIR$/.idea" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1Ti3kg5f6s1PAAMgVmoJEMaFUml" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -39,7 +57,6 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />

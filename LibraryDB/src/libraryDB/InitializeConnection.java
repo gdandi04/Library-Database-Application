@@ -72,14 +72,14 @@ public class InitializeConnection {
 
     conn = DriverManager.getConnection("jdbc:mysql://"
             + this.serverName + ":" + this.portNumber + "/"
-            + this.dbName + "?characterEncoding=UTF-8&useSSL=false",
+            + this.dbName + "?characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true",
         connectionProps);
 
     return conn;
   }
 
   /**
-   * Run a SQL command which does not return a recordset:
+   * Run a SQL command which does not return a result set:
    * CREATE/INSERT/UPDATE/DELETE/DROP/etc.
    *
    * @throws SQLException If something goes wrong
@@ -187,9 +187,11 @@ public class InitializeConnection {
           e.printStackTrace();
         }
         break;
+
       case EXIT:
         System.out.println("Ended session");
         break;
+        
       default:
         System.out.println("Invalid command");
     }
