@@ -27,20 +27,20 @@ public class CheckOut {
   }
 
   public void selectMedia(String item) throws SQLException {
-    int itemID = Integer.parseInt(item);
+    String itemID = item;
     String query = "";
     String available = "WHERE num_copies > 0";
     switch (itemID) {
-      case 1:
+      case "1":
         query = "SELECT * FROM book " + available;
         break;
-      case 2:
+      case "2":
         query = "SELECT * FROM ebook " + available;
         break;
-      case 3:
+      case "3":
         query = "SELECT * FROM video " + available;
         break;
-      case 4:
+      case "4":
         query = "SELECT * FROM cd " + available;
         break;
       default:

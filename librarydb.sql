@@ -61,7 +61,6 @@ genre VARCHAR(30)		NOT NULL,
 num_copies		INT				NOT NULL,
 year_released	DATE,
 song_list		TEXT,
-PRIMARY KEY (cd_id, album_name),
 CONSTRAINT cd_fk_media
 FOREIGN KEY (cd_id, album_name)
  REFERENCES media(media_id, media_title)
@@ -80,7 +79,6 @@ availInPrint BOOLEAN NOT NULL,
 plot VARCHAR(300) NOT NULL,
 printPubYear INT NOT NULL,
 ePubYear INT NOT NULL,
-PRIMARY KEY (ebook_id, title),
  CONSTRAINT fk_ebook_id_media_id FOREIGN KEY (ebook_id, title) REFERENCES media (media_id, media_title)
  	ON DELETE CASCADE ON UPDATE CASCADE
 );
