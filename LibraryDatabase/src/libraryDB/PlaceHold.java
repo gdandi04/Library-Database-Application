@@ -29,21 +29,23 @@ public class PlaceHold {
     }
 
   public ArrayList<ArrayList<String>> selectMedia(String item) throws SQLException {
-    int itemID = Integer.parseInt(item);
+    String itemID = item;
       String query = "";
-      switch (itemID) {
-        case 1:
+      switch (itemID.toUpperCase()) {
+        case "1":
           query = "SELECT * FROM book";
           break;
-        case 2:
+        case "2":
           query = "SELECT * FROM ebook";
           break;
-        case 3:
+        case "3":
           query = "SELECT * FROM video";
           break;
-        case 4:
+        case "4":
           query = "SELECT * FROM cd";
           break;
+        case "EXIT":
+          this.db.runCommand(conn);
         default:
           System.out.println("No media type available for this input. Select another media");
            Scanner scan = new Scanner(System.in);

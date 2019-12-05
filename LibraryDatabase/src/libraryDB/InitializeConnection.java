@@ -241,12 +241,13 @@ public class InitializeConnection {
   }
 
   private void displayMediaTypes() {
-    System.out.println(
-        "Choose the type of media you would like to search for by typing the corresponding number.");
+    System.out.println("Choose the type of media you would "
+        + "like to search for by typing the corresponding number.");
     System.out.println("1: Book\n"
         + "2: E-Book\n"
         + "3: Video\n"
         + "4: CD");
+    System.out.println("Or type \"EXIT\" to return home.");
   }
 
   private String userChoice() {

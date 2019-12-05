@@ -2,19 +2,142 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="13f0c9ae-24be-481e-892f-5d386e6c34d9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../LibraryDB/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../LibraryDB/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.mylyn/.taskListIndex/segments_1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.mylyn/.taskListIndex/write.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.mylyn/.tasks.xml.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.mylyn/repositories.xml.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.mylyn/tasks.xml.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/13/b07f0f9bbb00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/1e/b0e5b4c4bd00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/1f/00d1aebfbf00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/30/6052a304be00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/39/4045598fbe00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/3e/30b04787be00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/4e/e02464cdbe00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/5e/6064648bbe00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/60/c002e398bb00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/62/6024a6e9bd00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/6c/70d92038bc00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/71/303dfe07be00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/74/707ebf62bc00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/96/00355a07be00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/9d/d0eefe47bd00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/9e/a09fb469bf00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/a1/9043bb63bc00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/a2/2080715bbf00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/a3/b08dc59fbb00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/b1/80bc3f83be00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/bb/1078f867bc00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/c/80ab9a68bc00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/c0/1007c49fbb00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/c3/6069bbeebd00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/c9/40331157bf00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/cf/b09ff1a0bd00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/dc/90b127bfbd00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/df/00493298be00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/df/a0eb3245bf00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/e4/406ef354bd00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/ef/7065e284bd00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/f0/f0fb7994be00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/fe/f0472783bd00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.history/ff/e022cc99be00001a1851fb360efe80ba" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.projects/DBDemo/.indexes/e4/40/history.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.projects/DBDemo/.indexes/e4/history.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.projects/DBDemo/.markers" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.projects/DBDemo/org.eclipse.jdt.core/state.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.root/1.tree" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.debug.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.epp.logging.aeri.ide.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.junit.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.launching.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.m2e.discovery.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.context.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.monitor.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.mylyn.tasks.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.recommenders.news.rcp.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.editors.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.debug.core/.launches/JavaMySql.launch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.debug.ui/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.debug.ui/launchConfigurationHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/1163360986.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/2585418274.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/263493700.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/assumedExternalFilesCache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/externalLibsTimeStamps" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/index.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/savedIndexNames.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.launching/.install.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.launching/libraryInfos.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/.workspace/2019/11/45/refactorings.history" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.ltk.core.refactoring/.refactorings/.workspace/2019/11/45/refactorings.index" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.ltk.ui.refactoring/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.m2e.logback.configuration/0.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.9.1.20180912-1601.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.oomph.setup/workspace.setup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.recommenders.news.impl/downloads/http%3A%2F%2Fwww.eclipse.org%2Frecommenders%2Ffeeds%2Fide.rss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.tips.ide/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.ui.intro/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.ui.intro/introstate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/.metadata/version.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/DBDemo/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/DBDemo/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/DBDemo/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/DBDemo/bin/javamysql/JavaMySql.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final Project/DBDemo/src/javamysql/JavaMySql.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/LibraryDB.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/out/production/LibraryDB/libraryDB/DeleteHold.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/out/production/LibraryDB/libraryDB/InitializeConnection$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/out/production/LibraryDB/libraryDB/InitializeConnection$Commands.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/out/production/LibraryDB/libraryDB/InitializeConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/out/production/LibraryDB/libraryDB/RunApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/out/production/LibraryDB/libraryDB/SearchMedia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/out/test/LibraryDB/DeleteHoldTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/src/libraryDB/DeleteHold.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/src/libraryDB/InitializeConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/src/libraryDB/PlaceHold.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/src/libraryDB/RunApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/src/libraryDB/SearchMedia.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../LibraryDB/test/DeleteHoldTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LibraryDatabase/META-INF/LibraryDatabase.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/DeleteHold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/DeleteHold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/InitializeConnection$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/InitializeConnection$Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/InitializeConnection$Commands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/CheckOut.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/CheckOut.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/InitializeConnection.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/InitializeConnection.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/PlaceHold.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/PlaceHold.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/RunApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/RunApplication.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/SearchMedia.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/LibraryDatabase/libraryDB/SearchMedia.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libraryDB/CheckOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/CheckOut.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/libraryDB/InitializeConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/InitializeConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/libraryDB/PlaceHold.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/PlaceHold.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/libraryDB/SearchMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/libraryDB/SearchMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

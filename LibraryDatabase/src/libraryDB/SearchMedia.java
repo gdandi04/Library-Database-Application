@@ -51,6 +51,7 @@ public class SearchMedia {
       for (ArrayList<String> list : results) {
         for (String s : list) {
           System.out.println(s);
+          System.out.println("");
         }
       }
     }
@@ -65,7 +66,7 @@ public class SearchMedia {
 
     while (rs.next()) {
       ArrayList<String> row = new ArrayList<>();
-      row.add("Book ID: " + rs.getString("book_id"));
+      row.add("Book ID: " + rs.getString("ebook_id"));
       row.add("Title: " + rs.getString("title"));
       row.add("Author: " + rs.getString("author"));
       row.add("Genre: " + rs.getString("genre"));
@@ -83,6 +84,7 @@ public class SearchMedia {
       for (ArrayList<String> list : results) {
         for (String s : list) {
           System.out.println(s);
+          System.out.println("");
         }
       }
     }
@@ -115,6 +117,7 @@ public class SearchMedia {
       for (ArrayList<String> list : results) {
         for (String s : list) {
           System.out.println(s);
+          System.out.println("");
         }
       }
     }
@@ -145,6 +148,7 @@ public class SearchMedia {
       for (ArrayList<String> list : results) {
         for (String s : list) {
           System.out.println(s);
+          System.out.println("");
         }
       }
     }
